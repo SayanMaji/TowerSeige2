@@ -15,10 +15,10 @@ class Polygon{
     display(){
         var pos = this.body.position;
         push();
-        translate(pos.x,pos.y);
+       // translate(pos.x,pos.y);
         ellipseMode(CENTER);
         fill("yellow");
-        ellipse(0,0,this.radius,this.radius)
+        ellipse(pos.x,pos.y,this.radius,this.radius)
         pop();
 
         

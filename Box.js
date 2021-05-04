@@ -1,7 +1,7 @@
 class Box{
   constructor(x, y, width, height) {
       var options = {
-        isStatic:true,
+        
           'restitution':0.8,
           'friction':1.0,
           'density':1.0
@@ -12,10 +12,9 @@ class Box{
       World.add(world, this.body);
     }
     display(){
-      console.log(this.body.speed)
       var pos=this.body.position;
       push();
-      translate(this.body.position.x, this.body.position.y);
+     // translate(this.body.position.x, this.body.position.y);
       rectMode(CENTER);
       var rand=Math.round(random(1,4));
       switch(rand){
@@ -30,13 +29,11 @@ class Box{
         default : fill("white");
       }
       if((this.body.speed)<3)
-{rect(pos.x,pos.y,this.width,this.height);}
-else
-{
-World.remove(world,this.body)  
-    }
-       
+      {rect(pos.x,pos.y,this.width,this.height);}
+      else
+      {
+      World.remove(world,this.body)  
+          }
       pop();
-      
-}
+    }
 }
